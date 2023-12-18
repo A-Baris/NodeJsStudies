@@ -1,12 +1,29 @@
-const myssql12 = require("mysql2");
+const mysql12 = require("mysql2");
 const config = require("../config");
 
-let connection = myssql12.createConnection(config.db);
-
-connection.connect((err)=>{
-    if(err){
-        return console.log(err);
-    }
-    console.log("veritabanı bağlantısı başarılı");
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize(config.db.database,config.db.user,config.db.password,{
+    dialect:"mysql",
+    host:config.db.host
 });
-module.exports = connection.promise();
+async function connect(){
+    try{
+        await sequelize.authenticate();
+        console.log("veri tabanı bağlantı gerçekleşti");
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+connect();
+module.exports = sequelize;
+
+// let connection = mysql12.createConnection(config.db);
+
+// connection.connect((err)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("veritabanı bağlantısı başarılı");
+// });
+// module.exports = connection.promise();

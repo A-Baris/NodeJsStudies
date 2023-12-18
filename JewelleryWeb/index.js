@@ -7,6 +7,8 @@ app.use(express.urlencoded({ extended: false }));
 const path = require("path");
 const routesOfUser = require("./routes/user");
 const routesOfAdmin = require("./routes/admin");
+const Product = require("./models/product");
+const Category = require("./models/category");
 
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 app.use("/static", express.static(path.join(__dirname, "public")));
