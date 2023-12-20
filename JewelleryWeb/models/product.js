@@ -2,18 +2,13 @@ const {DataTypes}=require("sequelize");
 const sequelize = require("../data/db");
 
 const Product = sequelize.define("product",{
-    productId:{
-        type:DataTypes.INTEGER,
-        autoIncrement:true,
-        allowNull:false,
-        primaryKey:true
-    },
+
     name:{
         type:DataTypes.STRING,
         allowNull:false,
     },
     gram:{
-        type:DataTypes.DECIMAL,
+        type:DataTypes.DECIMAL(5,2),
         allowNull:false,
     },
     description:{
@@ -27,10 +22,8 @@ const Product = sequelize.define("product",{
     
     }
 
+},{
+    timestamps:true
 });
-async function sync(){
-await Product.sync({force:true});
-console.log("Product tablosu eklendi");
-}
-sync();
+
 module.exports = Product;
