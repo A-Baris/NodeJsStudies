@@ -25,10 +25,10 @@ Product.belongsTo(Category);
 // Product.belongsToMany(Category,{through:productCategories});
 // Category.belongsToMany(Blog, { through: "productCategories"});
 
-(async () => {
-    await sequelize.sync({ alter: true });
-    await dummyData();
-})();
+// (async () => {
+//     await sequelize.sync({ alter: true });
+//     await dummyData();
+// })();
 
 
 app.listen(4000, function() {

@@ -9,29 +9,30 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-12 mt-3">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" >
+                    <input hidden type="text" class="form-control" id="id" name="id" value="<%= product.id %>">
                     <div class="row mb-3">
                         <label for="name" class="col-sm-2 col-form-label">Ürün Adı</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="gram" class="col-sm-2 col-form-label">Gram</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="gram" name="gram">
+                            <input type="text" class="form-control" id="gram" name="gram" value="<%= product.gram %>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="description" class="col-sm-2 col-form-label">Açıklama</label>
                         <div class="col-sm-8">
-                            <textarea id="editor" name="description" class="form-control" rows="10"></textarea>
+                            <textarea id="editor" name="description" class="form-control" rows="10"><%= product.description %></textarea>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="image" class="col-sm-2 col-form-label">Image</label>
                         <div class="col-sm-8">
-                            <input type="file" class="form-control" id="image" name="image">
+                            <input type="text" class="form-control" id="image" name="image" value="<%= product.image %>">
                         </div>
                     </div>
                     <div class="row mb-3">
