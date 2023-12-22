@@ -56,7 +56,8 @@ exports.index = async function(req,res){
             title: "Popüler Ürüler",
             products: products,
             categories: categories,
-            selectedCategory: null
+            selectedCategory: null,
+            isAuth:req.session.isAuth
         })
     }
     catch(err)

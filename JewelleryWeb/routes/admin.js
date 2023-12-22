@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const adminController=require("../controllers/admin");
 const imageUpload = require("../helpers/image-upload-helper");
+
+
+router.get("/product/delete/:id",adminController.get_product_delete);
+router.post("/product/delete/:id",adminController.post_product_delete);
 router.get("/product/edit/:id",adminController.get_product_edit);
 router.post("/product/edit/:id",imageUpload.upload.single("image"),adminController.post_product_edit);
 
