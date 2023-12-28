@@ -4,6 +4,11 @@ const config = {
         user: "root",
         password: "baris21293",
         database: "jewellery"
+    },
+    email:{
+        username:"macaron_xx@hotmail.com",
+        password:"macaron21293",
+        from:"TestWeb"
     }
 }
 

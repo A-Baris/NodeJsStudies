@@ -21,7 +21,7 @@ app.use("/api/products" ,products);
 
 
 
-const mongooseConnection = mongoose.connect("mongodb+srv://barisemirdag:342093ABE@cluster0.85szbxc.mongodb.net/shoppingdb?retryWrites=true&w=majority")
+const mongooseConnection = mongoose.connect("mongodb+srv://<username>:<password>>@cluster0.85szbxc.mongodb.net/shoppingdb?retryWrites=true&w=majority")
 .then(()=>console.log("MongoDB Bağlantı Gerçekleşti"))
 .catch((err)=>{console.log(err)});
 

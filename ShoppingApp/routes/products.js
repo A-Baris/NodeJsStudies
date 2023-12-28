@@ -20,7 +20,10 @@ router.post("/addproduct",async (req,res)=>{
 
  
 });
-
+router.delete("/:id", async (req,res)=>{
+    const product = await Product.deleteOne({_id:req.params.id});
+    res.send(product);
+})
 router.put("/:id",async(req,res)=>{
     const product = await Product.findByIdAndUpdate(req.params.id,{
         $set:{
